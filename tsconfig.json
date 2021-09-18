@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+      "lib": ["es6", "DOM"],
+      "target": "es6",
+      "module": "es6",        
+      "removeComments": false,
+      "preserveConstEnums": true,
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "noImplicitAny": false,
+      "allowSyntheticDefaultImports": true,
+      "outDir": "lib",
+      "noUnusedLocals": true,
+      "strictNullChecks": true,
+      "sourceMap": true,
+      "declaration": true,
+      "baseUrl": ".",
+      "paths": {
+        "react": ["packages/api/src"],
+      },
+      "rootDir": "."
+    },
+    "include": [
+      "packages/*/src",
+      "packages/*/__tests__"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "tests",
+      "jest",
+      "lib",
+      "__tests__",
+      "**/*.test.ts"
+    ],
+    "compileOnSave": false
+  }
