@@ -10,3 +10,7 @@ React-like web framework with the fiber architecture
 6. Simple virture dom
 7. Diff algorithm
 8. Extract render methods
+
+### to fix
+1. [ ] yarn monorepo下`TS`引用问题
+2. [ ] jsx编译问题

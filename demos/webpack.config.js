@@ -2,7 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
-  entry: './index.jsx',
+  entry: './index.tsx',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js'
+  },
   watch: true,
   module: {
     rules: [
@@ -22,22 +26,33 @@ module.exports = {
                 jsxPragmaFrag: 'mreact.createFragment',
                 isTSX: true
               }],
+              ['@babel/plugin-transform-react-jsx', {
+                pragma: 'mreact.createElement',
+                pragmaFrag: 'mreact.createFragment',
+                runtime: 'classic',
+                isTSX: true
+              }],
             ]
           }
         }
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin],
+  plugins: [new HtmlWebpackPlugin({
+    title: 'index',
+    template: './index.html'
+  })],
   devServer: {
-    contentBase: path.join(__dirname, "../dist"),
     port: 9000,
-    open: true
+    open: true,
+    hot: true
   },
   resolve: {
     alias: {
       'mreact': path.resolve(__dirname, '../packages/api'),
       'mreact-dom': path.resolve(__dirname, '../packages/dom')
-    }
-  }
+    },
+    extensions: ['.tsx', '.jsx', '.ts', '.js']
+  },
+  devtool: 'source-map'
 }

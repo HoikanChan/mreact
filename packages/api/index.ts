@@ -4,7 +4,7 @@ type IElement = {
     children: any | any[]
   }
 }
-export function createElement(type: string, props: object, ...children: any[]): IElement {
+function createElement(type: string, props: object, ...children: any[]): IElement {
   return {
     type,
     props: {
@@ -12,4 +12,8 @@ export function createElement(type: string, props: object, ...children: any[]): 
       children,
     }
   }
+}
+
+export default {
+  createElement
 }

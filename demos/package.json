@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js"
+    "start": "webpack-dev-server --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@babel/plugin-transform-typescript": "^7.15.4",
     "@babel/preset-env": "^7.15.6",
     "@babel/preset-react": "^7.14.5",
